@@ -6,6 +6,17 @@
 
 #include <stdint.h>
 #include <stddef.h>
+// 在包含 videodev2.h 之前添加
+#ifdef _IO
+#undef _IO
+#endif
+#ifdef _IOR  
+#undef _IOR
+#endif
+#ifdef _IOW
+#undef _IOW
+#endif
+
 #include <linux/videodev2.h>
 
 typedef uint32_t v4l2_pix_fmt_t; // see linux/videodev2.h for details
