@@ -188,7 +188,7 @@ void CustomLcdDisplay::lvgl_port_flush_callback(lv_display_t *drv, const lv_area
     } else {
         esp_lcd_panel_draw_bitmap(panel_handle, x_start, y_start, x_end + 1, y_end + 1, color_map);
     }
-    lv_disp_flush_ready(drv);
+    lv_display_flush_ready(drv);
 }
 
 CustomLcdDisplay::CustomLcdDisplay(esp_lcd_panel_io_handle_t panel_io, esp_lcd_panel_handle_t panel,

@@ -91,7 +91,7 @@ void CustomLcdDisplay::lvgl_port_flush_callback(lv_display_t *drv, const lv_area
         map += dmalen;
     }
     xSemaphoreTake(trans_done_sem,portMAX_DELAY);
-    lv_disp_flush_ready(drv);
+    lv_display_flush_ready(drv);
 }
 
 

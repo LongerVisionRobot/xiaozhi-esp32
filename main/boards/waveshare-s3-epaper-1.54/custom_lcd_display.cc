@@ -73,7 +73,7 @@ void CustomLcdDisplay::lvgl_flush_cb(lv_display_t *disp, const lv_area_t *area, 
         }
     }
     driver->EPD_DisplayPart();
-    lv_disp_flush_ready(disp);
+    lv_display_flush_ready(disp);
 }
 
 CustomLcdDisplay::CustomLcdDisplay(esp_lcd_panel_io_handle_t panel_io, esp_lcd_panel_handle_t panel, 
