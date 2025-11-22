@@ -303,37 +303,37 @@ LcdDisplay::~LcdDisplay() {
     }
 
     if (preview_image_ != nullptr) {
-        lv_obj_del(preview_image_);
+        lv_obj_delete(preview_image_);
     }
     if (chat_message_label_ != nullptr) {
-        lv_obj_del(chat_message_label_);
+        lv_obj_delete(chat_message_label_);
     }
     if (emoji_label_ != nullptr) {
-        lv_obj_del(emoji_label_);
+        lv_obj_delete(emoji_label_);
     }
     if (emoji_image_ != nullptr) {
-        lv_obj_del(emoji_image_);
+        lv_obj_delete(emoji_image_);
     }
     if (emoji_box_ != nullptr) {
-        lv_obj_del(emoji_box_);
+        lv_obj_delete(emoji_box_);
     }
     if (content_ != nullptr) {
-        lv_obj_del(content_);
+        lv_obj_delete(content_);
     }
     if (bottom_bar_ != nullptr) {
-        lv_obj_del(bottom_bar_);
+        lv_obj_delete(bottom_bar_);
     }
     if (status_bar_ != nullptr) {
-        lv_obj_del(status_bar_);
+        lv_obj_delete(status_bar_);
     }
     if (top_bar_ != nullptr) {
-        lv_obj_del(top_bar_);
+        lv_obj_delete(top_bar_);
     }
     if (side_bar_ != nullptr) {
-        lv_obj_del(side_bar_);
+        lv_obj_delete(side_bar_);
     }
     if (container_ != nullptr) {
-        lv_obj_del(container_);
+        lv_obj_delete(container_);
     }
     if (display_ != nullptr) {
         lv_display_delete(display_);
@@ -484,7 +484,7 @@ void LcdDisplay::SetupUI() {
     lv_obj_center(low_battery_label_);
     lv_obj_add_flag(low_battery_popup_, LV_OBJ_FLAG_HIDDEN);
 
-    emoji_image_ = lv_img_create(screen);
+    emoji_image_ = lv_image_create(screen);
     lv_obj_align(emoji_image_, LV_ALIGN_TOP_MID, 0, text_font->line_height + lvgl_theme->spacing(8));
 
     // Display AI logo while booting
@@ -512,7 +512,7 @@ void LcdDisplay::SetChatMessage(const char* role, const char* content) {
         lv_obj_t* first_child = lv_obj_get_child(content_, 0);
         lv_obj_t* last_child = lv_obj_get_child(content_, child_count - 1);
         if (first_child != nullptr) {
-            lv_obj_del(first_child);
+            lv_obj_delete(first_child);
         }
         // Scroll to the last message immediately
         if (last_child != nullptr) {
@@ -533,7 +533,7 @@ void LcdDisplay::SetChatMessage(const char* role, const char* content) {
                     void* bubble_type_ptr = lv_obj_get_user_data(last_bubble);
                     if (bubble_type_ptr != nullptr && strcmp((const char*)bubble_type_ptr, "system") == 0) {
                         // If the last message is also a system message, delete it
-                        lv_obj_del(last_container);
+                        lv_obj_delete(last_container);
                     }
                 }
             }
@@ -805,7 +805,7 @@ void LcdDisplay::SetupUI() {
     lv_obj_set_style_text_color(emoji_label_, lvgl_theme->text_color(), 0);
     lv_label_set_text(emoji_label_, FONT_AWESOME_MICROCHIP_AI);
 
-    emoji_image_ = lv_img_create(emoji_box_);
+    emoji_image_ = lv_image_create(emoji_box_);
     lv_obj_center(emoji_image_);
     lv_obj_add_flag(emoji_image_, LV_OBJ_FLAG_HIDDEN);
 
