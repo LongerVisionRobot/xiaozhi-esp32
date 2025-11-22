@@ -581,7 +581,7 @@ read_image_data(gd_GIF * gif, int interlace)
         else if(!table_is_full) {
             ret = add_entry(&table, str_len + 1, key, entry.suffix);
             if(ret == -1) {
-                lv_free(table);
+                free(table);
                 return -1;
             }
             if(table->nentries == 0x1000) {
@@ -597,7 +597,7 @@ read_image_data(gd_GIF * gif, int interlace)
         str_len = entry.length;
 	if(frm_off + str_len > frm_size){
 		ESP_LOGW(TAG, "LZW table token overflows the frame buffer");
-		lv_free(table);
+		free(table);
 		return -1;
 	}
         for(i = 0; i < str_len; i++) {
@@ -616,7 +616,7 @@ read_image_data(gd_GIF * gif, int interlace)
         if(key < table->nentries - 1 && !table_is_full)
             table->entries[table->nentries - 1].suffix = entry.suffix;
     }
-    lv_free(table);
+    free(table);
     if(key == stop) f_gif_read(gif, &sub_len, 1);  /* Must be zero! */
     f_gif_seek(gif, end, LV_FS_SEEK_SET);
     return 0;
@@ -766,7 +766,7 @@ void
 gd_close_gif(gd_GIF * gif)
 {
     f_gif_close(gif);
-    lv_free(gif);
+    free(gif);
 }
 
 static bool f_gif_open(gd_GIF * gif, const void * path, bool is_file)
