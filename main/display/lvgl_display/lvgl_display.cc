@@ -47,22 +47,22 @@ LvglDisplay::~LvglDisplay() {
     }
 
     if (network_label_ != nullptr) {
-        lv_obj_del(network_label_);
+        lv_obj_delete(network_label_);
     }
     if (notification_label_ != nullptr) {
-        lv_obj_del(notification_label_);
+        lv_obj_delete(notification_label_);
     }
     if (status_label_ != nullptr) {
-        lv_obj_del(status_label_);
+        lv_obj_delete(status_label_);
     }
     if (mute_label_ != nullptr) {
-        lv_obj_del(mute_label_);
+        lv_obj_delete(mute_label_);
     }
     if (battery_label_ != nullptr) {
-        lv_obj_del(battery_label_);
+        lv_obj_delete(battery_label_);
     }
     if( low_battery_popup_ != nullptr ) {
-        lv_obj_del(low_battery_popup_);
+        lv_obj_delete(low_battery_popup_);
     }
     if (pm_lock_ != nullptr) {
         esp_pm_lock_delete(pm_lock_);

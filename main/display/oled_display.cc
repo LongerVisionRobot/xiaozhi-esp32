@@ -85,20 +85,20 @@ OledDisplay::OledDisplay(esp_lcd_panel_io_handle_t panel_io, esp_lcd_panel_handl
 
 OledDisplay::~OledDisplay() {
     if (content_ != nullptr) {
-        lv_obj_del(content_);
+        lv_obj_delete(content_);
     }
 
     bool is_128x64_layout = (top_bar_ != nullptr);
     if (status_bar_ != nullptr && is_128x64_layout) {
         status_label_ = nullptr;
         notification_label_ = nullptr;
-        lv_obj_del(status_bar_);
+        lv_obj_delete(status_bar_);
     }
     if (top_bar_ != nullptr) {
         network_label_ = nullptr;
         mute_label_ = nullptr;
         battery_label_ = nullptr;
-        lv_obj_del(top_bar_);
+        lv_obj_delete(top_bar_);
     }
     if (side_bar_ != nullptr) {
         if (!is_128x64_layout) {
@@ -108,10 +108,10 @@ OledDisplay::~OledDisplay() {
             mute_label_ = nullptr;
             battery_label_ = nullptr;
         }
-        lv_obj_del(side_bar_);
+        lv_obj_delete(side_bar_);
     }
     if (container_ != nullptr) {
-        lv_obj_del(container_);
+        lv_obj_delete(container_);
     }
 
     if (panel_ != nullptr) {
