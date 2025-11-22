@@ -27,7 +27,7 @@ public:
 
         DisplayLockGuard lock(this);
         // 只需要覆盖颜色相关的样式
-        auto screen = lv_disp_get_scr_act(lv_disp_get_default());
+        auto screen = lv_disp_get_scr_act(lv_display_get_default());
         lv_obj_set_style_text_color(screen, lv_color_black(), 0);
 
         // 设置容器背景色

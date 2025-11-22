@@ -1,13 +1,17 @@
 #ifndef BOARD_H
 #define BOARD_H
 
+// #ifdef CONFIG_BOARD_TYPE_BREAD_COMPACT_ML307
 #include <http.h>
 #include <web_socket.h>
 #include <mqtt.h>
 #include <udp.h>
-#include <string>
 #include <network_interface.h>
+// #endif
 
+#include "esp_netif.h"
+
+#include <string>
 #include "led/led.h"
 #include "backlight.h"
 #include "camera.h"

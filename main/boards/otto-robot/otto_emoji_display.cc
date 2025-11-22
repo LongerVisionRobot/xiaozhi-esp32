@@ -88,7 +88,7 @@ void OttoEmojiDisplay::SetupChatLabel() {
     DisplayLockGuard lock(this);
 
     if (chat_message_label_) {
-        lv_obj_del(chat_message_label_);
+        lv_obj_delete(chat_message_label_);
     }
 
     chat_message_label_ = lv_label_create(container_);

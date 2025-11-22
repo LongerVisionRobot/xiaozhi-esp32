@@ -26,7 +26,7 @@ struct JpegData {
 
 class SscmaCamera : public Camera {
 private:
-    lv_img_dsc_t preview_image_;
+    lv_image_dsc_t preview_image_;
     std::string explain_url_;
     std::string explain_token_;
     sscma_client_io_handle_t sscma_client_io_handle_;
