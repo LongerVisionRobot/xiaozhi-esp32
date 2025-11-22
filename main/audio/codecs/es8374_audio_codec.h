@@ -2,6 +2,7 @@
 #define _ES8374_AUDIO_CODEC_H
 
 #include "audio_codec.h"
+#include "es8374_codec.h"
 
 #include <driver/i2c.h>
 #include <driver/gpio.h>

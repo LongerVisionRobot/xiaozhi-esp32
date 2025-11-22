@@ -2,6 +2,7 @@
 #define _ES8389_AUDIO_CODEC_H
 
 #include "audio_codec.h"
+#include "es8389_codec.h"
 
 #include <driver/i2c.h>
 #include <driver/gpio.h>

@@ -2,6 +2,8 @@
 #define _BOX_AUDIO_CODEC_H
 
 #include "audio_codec.h"
+#include "es8311_codec.h"
+#include "es7210_adc.h"
 
 #include <esp_codec_dev.h>
 #include <esp_codec_dev_defaults.h>

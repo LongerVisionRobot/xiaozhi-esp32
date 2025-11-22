@@ -2,6 +2,7 @@
 #define _ES8388_AUDIO_CODEC_H
 
 #include "audio_codec.h"
+#include "es8388_codec.h"
 
 #include <driver/i2c_master.h>
 #include <esp_codec_dev.h>
